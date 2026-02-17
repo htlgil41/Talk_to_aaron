@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:talk_to_aaron/domain/entities/message.dart';
+import 'package:talk_to_aaron/presentations/provider/chat_provider.dart';
 import 'package:talk_to_aaron/presentations/widgets/chat/my_message.dart';
 import 'package:talk_to_aaron/presentations/widgets/chat/other_message.dart';
 import 'package:talk_to_aaron/presentations/widgets/input_message.dart';
@@ -8,6 +11,8 @@ class ChatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final chatProvider = context.watch<ChatProvider>();
+
     return Scaffold(
       appBar: AppBar(
         titleSpacing: 10,
@@ -43,8 +48,12 @@ class ChatScreen extends StatelessWidget {
           children: [
             Expanded(
               child: ListView.builder(
+                itemCount: chatProvider.messageList.length,
                 itemBuilder: (context, index) {
-                  return index % 2 == 0 ? MyMessage() : OtherMessage();
+                  final message = chatProvider.messageList[index];
+                  return message.whos == WhosMessgae.me
+                      ? MyMessage(message: message)
+                      : OtherMessage(message: message);
                 },
               ),
             ),

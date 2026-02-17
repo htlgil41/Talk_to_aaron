@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:talk_to_aaron/domain/entities/message.dart';
 
 class OtherMessage extends StatelessWidget {
-  const OtherMessage({super.key});
+  const OtherMessage({super.key, required this.message});
+
+  final Message message;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +20,7 @@ class OtherMessage extends StatelessWidget {
           ),
           padding: EdgeInsets.all(15),
           child: Text(
-            "Hola este es un mensaje",
+            message.message,
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
           ),
         ),
@@ -57,7 +60,8 @@ class OtherMessage extends StatelessWidget {
               }
             },
             image: NetworkImage(
-              "https://yesno.wtf/assets/no/9-dc99c0e3c066b28d3a12262692cd5432.gif",
+              message.urlImage ??
+                  "https://i.ebayimg.com/images/g/4oEAAOSw~mxji5wI/s-l1200.jpg",
             ),
           ),
         ),
