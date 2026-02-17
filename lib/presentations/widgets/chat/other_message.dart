@@ -31,7 +31,7 @@ class OtherMessage extends StatelessWidget {
           child: Image(
             height: size.width / 2,
             width: size.height / 2,
-            fit: BoxFit.cover,
+            fit: BoxFit.scaleDown,
             loadingBuilder: (context, child, loadingProgress) {
               if (loadingProgress == null) {
                 return child;

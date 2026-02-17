@@ -4,7 +4,7 @@ import 'package:talk_to_aaron/domain/entities/message.dart';
 import 'package:talk_to_aaron/presentations/provider/chat_provider.dart';
 import 'package:talk_to_aaron/presentations/widgets/chat/my_message.dart';
 import 'package:talk_to_aaron/presentations/widgets/chat/other_message.dart';
-import 'package:talk_to_aaron/presentations/widgets/input_message.dart';
+import 'package:talk_to_aaron/presentations/widgets/chat/input_message.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -26,7 +26,9 @@ class ChatScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsetsGeometry.symmetric(horizontal: 10),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                chatProvider.deleteAllMessage();
+              },
               autofocus: true,
               color: Colors.red,
               icon: Icon(Icons.delete_forever_rounded),
@@ -48,6 +50,7 @@ class ChatScreen extends StatelessWidget {
           children: [
             Expanded(
               child: ListView.builder(
+                controller: chatProvider.scroll,
                 itemCount: chatProvider.messageList.length,
                 itemBuilder: (context, index) {
                   final message = chatProvider.messageList[index];
