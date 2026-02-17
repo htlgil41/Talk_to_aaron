@@ -29,9 +29,9 @@ class OtherMessage extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadiusGeometry.circular(35),
           child: Image(
-            height: size.width / 2,
-            width: size.height / 2,
-            fit: BoxFit.scaleDown,
+            height: 250,
+            width: 250,
+            fit: BoxFit.contain,
             loadingBuilder: (context, child, loadingProgress) {
               if (loadingProgress == null) {
                 return child;
@@ -40,8 +40,8 @@ class OtherMessage extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: const Color.fromARGB(36, 138, 195, 255),
                   ),
-                  height: size.width / 2,
-                  width: size.height / 2,
+                  height: 250,
+                  width: 250,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,

@@ -14,12 +14,8 @@ class ChatProvider extends ChangeNotifier {
     if (txt.endsWith("?")) {
       messageList.add(await answer());
 
+      await scrollMove();
       notifyListeners();
-      scroll.animateTo(
-        scroll.position.maxScrollExtent * 2,
-        duration: const Duration(microseconds: 420),
-        curve: Curves.easeInBack,
-      );
       return;
     }
 
@@ -27,12 +23,16 @@ class ChatProvider extends ChangeNotifier {
       messageList.add(await answermia());
     }
 
+    await scrollMove();
+    notifyListeners();
+  }
+
+  Future<void> scrollMove() async {
     scroll.animateTo(
-      scroll.position.maxScrollExtent * 2,
+      scroll.position.maxScrollExtent * 5,
       duration: const Duration(microseconds: 420),
       curve: Curves.easeInBack,
     );
-    notifyListeners();
   }
 
   Future<Message> answer() async {
