@@ -57,7 +57,11 @@ class ChatScreen extends StatelessWidget {
                 },
               ),
             ),
-            InputMessage(),
+            InputMessage(
+              valueChangeMessage: (value) {
+                chatProvider.sendMessage(value);
+              },
+            ),
           ],
         ),
       ),

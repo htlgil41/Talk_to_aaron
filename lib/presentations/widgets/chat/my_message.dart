@@ -22,7 +22,7 @@ class MyMessage extends StatelessWidget {
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
           ),
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 5),
       ],
     );
   }

@@ -25,7 +25,7 @@ class OtherMessage extends StatelessWidget {
           ),
         ),
 
-        const SizedBox(height: 15),
+        const SizedBox(height: 5),
         ClipRRect(
           borderRadius: BorderRadiusGeometry.circular(35),
           child: Image(
@@ -65,7 +65,7 @@ class OtherMessage extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 8),
       ],
     );
   }
