@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:talk_to_aaron/presentations/widgets/chat/my_message.dart';
 import 'package:talk_to_aaron/presentations/widgets/chat/other_message.dart';
+import 'package:talk_to_aaron/presentations/widgets/input_message.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -47,7 +48,7 @@ class ChatScreen extends StatelessWidget {
                 },
               ),
             ),
-            Text("Hola 2"),
+            InputMessage(),
           ],
         ),
       ),
