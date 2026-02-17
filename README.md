@@ -18,7 +18,7 @@
 
 | Pantalla de Chat | Ejemplo de Respuesta |
 | :---: | :---: |
-| ![Chat Screen]() | ![Answer Screen]() |
+| ![Chat Screen](/imagenes_app/chat.png) | ![Answer Screen](/imagenes_app/messages.png) |
 
 
 ---
